@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.riahi.developerlistapp.R
-import com.riahi.developerlistapp.data.Developer
+import com.riahi.developerlistapp.data.model.Developer
 
 class MainRecyclerAdapter (val context: Context,
                            val developers: List<Developer>,

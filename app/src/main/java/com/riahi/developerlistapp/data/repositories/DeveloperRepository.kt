@@ -1,4 +1,4 @@
-package com.riahi.developerlistapp.data
+package com.riahi.developerlistapp.data.repositories
 
 import android.app.Application
 import android.content.Context
@@ -7,6 +7,9 @@ import android.widget.Toast
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.MutableLiveData
 import com.riahi.developerlistapp.WEB_SERVICE_URL
+import com.riahi.developerlistapp.data.service.DeveloperService
+import com.riahi.developerlistapp.data.database.MyDatabase
+import com.riahi.developerlistapp.data.model.Developer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +21,9 @@ import timber.log.Timber
 class DeveloperRepository(val app: Application) {
 
     val developerData = MutableLiveData<List<Developer>>()
-    private val developerDao = MyDatabase.getDatabase(app).developerDao()
+    private val developerDao = MyDatabase.getDatabase(
+        app
+    ).developerDao()
 
     init {
         // Background Thread

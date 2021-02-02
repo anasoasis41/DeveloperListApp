@@ -2,6 +2,7 @@ package com.riahi.developerlistapp.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.riahi.developerlistapp.R
+import com.riahi.developerlistapp.databinding.FragmentDetailBinding
 import com.riahi.developerlistapp.ui.viewmodels.SharedViewModel
 
 class DetailFragment : Fragment() {
@@ -29,16 +31,21 @@ class DetailFragment : Fragment() {
             requireActivity(), R.id.nav_host
         )
 
-        val view = inflater.inflate(R.layout.fragment_main, container, false)
-
-        /*viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
         val binding = FragmentDetailBinding.inflate(
             inflater, container, false
         )
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        */
-        return view
+
+        return binding.root
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item?.itemId == android.R.id.home) {
+            navController.navigateUp()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

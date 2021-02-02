@@ -1,8 +1,9 @@
-package com.riahi.developerlistapp.data
+package com.riahi.developerlistapp.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.riahi.developerlistapp.data.model.Developer
 
 @Dao
 interface DeveloperDao {

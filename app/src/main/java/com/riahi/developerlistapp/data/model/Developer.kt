@@ -1,4 +1,4 @@
-package com.riahi.developerlistapp.data
+package com.riahi.developerlistapp.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -15,4 +15,7 @@ data class Developer (
     val description: String,
     val picture: String,
     val hired: String
-)
+) {
+    val imageUrl
+        get() = picture
+}

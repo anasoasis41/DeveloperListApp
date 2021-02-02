@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.riahi.developerlistapp.R
-import com.riahi.developerlistapp.data.Developer
+import com.riahi.developerlistapp.data.model.Developer
 import com.riahi.developerlistapp.ui.viewmodels.SharedViewModel
 import timber.log.Timber
 

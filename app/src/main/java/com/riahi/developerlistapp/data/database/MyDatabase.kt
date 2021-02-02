@@ -1,9 +1,11 @@
-package com.riahi.developerlistapp.data
+package com.riahi.developerlistapp.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.riahi.developerlistapp.data.dao.DeveloperDao
+import com.riahi.developerlistapp.data.model.Developer
 
 
 @Database(entities = [Developer::class], version = 1, exportSchema = false)
