@@ -50,7 +50,7 @@ class DeveloperRepository(val app: Application) {
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build()
             val service = retrofit.create(DeveloperService::class.java)
-            val serviceData = service.getDeveloperData().body() ?: emptyList()
+            val serviceData = service.getDeveloperData().body()?.list ?: emptyList()
             developerData.postValue(serviceData)
             // Save data in room database
             developerDao.deleteAll()

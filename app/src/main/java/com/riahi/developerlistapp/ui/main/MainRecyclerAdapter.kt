@@ -37,8 +37,10 @@ class MainRecyclerAdapter (val context: Context,
             }
             Glide.with(context)
                 .load(developer.picture)
-                .into(deveoperImage)
-            holder.itemView.setOnClickListener {
+                .centerCrop()
+                .circleCrop()
+                .into(developerImage)
+            itemView.setOnClickListener {
                 itemListener.onItemClick(developer)
             }
         }
@@ -46,7 +48,7 @@ class MainRecyclerAdapter (val context: Context,
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameText = itemView.findViewById<TextView>(R.id.developerNameText)
-        val deveoperImage = itemView.findViewById<ImageView>(R.id.developerImage)
+        val developerImage = itemView.findViewById<ImageView>(R.id.developerImage)
     }
 
     interface DeveloperItemListener {

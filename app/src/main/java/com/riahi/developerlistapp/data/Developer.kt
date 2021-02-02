@@ -3,6 +3,9 @@ package com.riahi.developerlistapp.data
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+data class DeveloperList(
+    val list: List<Developer>
+)
 
 @Entity(tableName = "developers")
 data class Developer (

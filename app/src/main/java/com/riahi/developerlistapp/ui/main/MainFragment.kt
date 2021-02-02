@@ -52,7 +52,7 @@ class MainFragment : Fragment(), MainRecyclerAdapter.DeveloperItemListener {
         viewModel.developerData.observe(viewLifecycleOwner, Observer
         {
             mainAdapter = MainRecyclerAdapter(requireContext(), it, this)
-            Timber.d("data $it")
+            Timber.d("dataDev $it")
             recyclerView.adapter = mainAdapter
             swipeLayout.isRefreshing = false
         })

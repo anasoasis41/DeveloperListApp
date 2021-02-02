@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.riahi.developerlistapp.R
-import com.riahi.developerlistapp.databinding.FragmentDetailBinding
 import com.riahi.developerlistapp.ui.viewmodels.SharedViewModel
 
 class DetailFragment : Fragment() {
@@ -30,14 +29,16 @@ class DetailFragment : Fragment() {
             requireActivity(), R.id.nav_host
         )
 
-        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_main, container, false)
+
+        /*viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
         val binding = FragmentDetailBinding.inflate(
             inflater, container, false
         )
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-
-        return binding.root
+        */
+        return view
     }
 }
